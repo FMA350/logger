@@ -1,10 +1,27 @@
 #pragma once
 #include <sstream>
 
-namespace Logger
+namespace LOGGER
 {
-    class Modulation
+    enum LogLevel {
+        Error,
+        Warning,
+        Info,
+        Debug
+    };
+
+    static const std::string Enum2Name[4] = {"Error","Warning","Info","Debug"};
+
+
+    class ModulationInterface
     {
-        virtual void broadcast(std::stringstream) = 0;
+        public:
+        virtual void broadcast(LOGGER::LogLevel l, std::string file, int line, std::string message, ...) = 0;
+    };
+
+
+    class TerminalModulation : public ModulationInterface
+    {
+        virtual void broadcast(LOGGER::LogLevel l, std::string file, int line, std::string message, ...) override;
     };
 }
