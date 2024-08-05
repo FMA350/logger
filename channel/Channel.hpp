@@ -2,7 +2,6 @@
 #include <cstdint>
 #include <memory>
 #include <list>
-#include <sstream>
 #include "Modulation.hpp"
 
 #define ERROR(msg) log(LOGGER::LogLevel::Error, __FILE__, __LINE__, msg)
@@ -14,12 +13,18 @@ namespace LOGGER
 {
     class Channel{
     protected:
+        std::string _name;
+        uint8_t _level = LogLevel::Info;
         std::list<std::shared_ptr<ModulationInterface>> _devices;
     public:
-        Channel();
+        Channel(std::string name);
+        ~Channel();
+
+        void setLogLevel(uint8_t);
+        void append(std::shared_ptr<ModulationInterface>);
+
         // unstructured logging
         void log(LogLevel l, std::string file, int line, std::string message, ...);
-
         // TODO: Structured logging
         // void _log(structured_log message);
     };

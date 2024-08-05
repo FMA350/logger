@@ -13,6 +13,9 @@ file(GLOB log_SRC
     "channel/Channel.cpp"
     "modulation/Modulation.hpp"
     "modulation/Modulation.cpp"
+    "modulation/FileModulation.hpp"
+    "modulation/FileModulation.cpp"
+
     "test/log.cpp")
 
 add_custom_target(log)
