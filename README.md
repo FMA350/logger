@@ -1,6 +1,6 @@
 ### Radio Logger: Your whimsical, extensible, and ready to use logger for C++ applications
 > *Video might have killed radio stars, but this electromagnetically inspired logger class is here to stay.*
-> <cite> The Buggles (probably) </cite>
+> <br><cite> The Buggles (probably) </cite>
 
 ### Usage
 You use your radio (a singleton class) to query a certain channel.
