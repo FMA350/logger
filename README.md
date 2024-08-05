@@ -13,10 +13,10 @@ To run it, create a new folder called build:
 
 > mkdir build && cd build
 
-Then run cmake and make to compile the project
+Then run cmake and make to compile the project:
 
 > cmake .. && make
 
-Finally, run the test application with
+Finally, run the test application with:
 
 > ./log_test
